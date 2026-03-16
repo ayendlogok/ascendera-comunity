@@ -123,9 +123,10 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-12 border-y border-gray-800 bg-[#0f172a]/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
             {[
               { label: 'Members of Discord', value: stats.devs, icon: Users },
+              { label: 'Roblox Group Members', value: groupInfo?.memberCount ? groupInfo.memberCount.toLocaleString() : '1,200+', icon: Users },
               { label: 'Maps Uploaded', value: stats.maps, icon: Mountain },
               { label: 'Asset Downloads', value: stats.downloads, icon: Download },
               { label: 'Community Ratings', value: stats.ratings, icon: Star },

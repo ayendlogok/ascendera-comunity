@@ -34,7 +34,8 @@ export function Navbar() {
                   <Link href="/news" className={`${isActive('/news')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>News</Link>
                 </>
               )}
-              <Link href="/developers" className={`${isActive('/developers')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Members</Link>
+               <Link href="/developers" className={`${isActive('/developers')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Members</Link>
+               <Link href="/groups" className={`${isActive('/groups')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Our Groups</Link>
               
               {/* Protected Links (Devs/Admins) */}
               {status === 'authenticated' && (
@@ -92,6 +93,7 @@ export function Navbar() {
             </>
           )}
           <Link href="/developers" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Members</Link>
+          <Link href="/groups" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Our Groups</Link>
           
           {status === 'authenticated' && (
             <>
