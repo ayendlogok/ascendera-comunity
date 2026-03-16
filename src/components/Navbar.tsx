@@ -56,7 +56,7 @@ export function Navbar() {
                   <span className="font-semibold text-white">{session.user?.name}</span>
                 </div>
                 <button 
-                  onClick={() => signOut()}
+                  onClick={() => signOut({ callbackUrl: '/' })}
                   className="bg-gray-800 hover:bg-red-500/20 hover:text-red-500 text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 border border-gray-700 hover:border-red-500/50"
                 >
                   <LogOut className="w-4 h-4" /> Logout
@@ -103,7 +103,7 @@ export function Navbar() {
                   <span className="font-semibold text-white">{session.user?.name}</span>
                 </div>
                 <button 
-                  onClick={() => signOut()} 
+                  onClick={() => signOut({ callbackUrl: '/' })} 
                   className="text-red-500 hover:text-red-400 text-sm font-medium flex items-center gap-1"
                 >
                   <LogOut className="w-4 h-4" /> Logout
