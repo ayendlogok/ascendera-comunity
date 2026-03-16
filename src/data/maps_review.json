@@ -1,4 +1,88 @@
 [
-  { "id": "1", "title": "Mount Plenger", "author": "Ascendera Community", "type": "Volcano", "img": "/plenger.png", "rating": "4.9", "plays": 1500, "link": "https://www.roblox.com/share?code=b68edb1732ade243b7a7702b4f836fc1&type=ExperienceDetails&stamp=1773646165169" },
-  { "id": "2", "title": "Mount MiuMiu", "author": "Ascendera Community", "type": "Snow Mountain", "img": "/miumiu.png", "rating": "4.8", "plays": 800, "link": "https://www.roblox.com/share?code=5cfa8f0c2def0c40b5a2038c671fbf5c&type=ExperienceDetails&stamp=1773646287581" }
+  {
+    "id": "1",
+    "title": "Mount Plenger",
+    "author": "Ascendera Community",
+    "type": "Volcano",
+    "img": "/plenger.png",
+    "rating": "4.9",
+    "plays": 1500,
+    "link": "https://www.roblox.com/share?code=b68edb1732ade243b7a7702b4f836fc1&type=ExperienceDetails&stamp=1773646165169",
+    "description": "Mount Plenger is an active volcano map featuring intense heat visual effects and challenging trail paths through the magma core.",
+    "model_type": "Custom Mesh & Assets",
+    "checkpoints": 31,
+    "characteristics": "Hot & Foggy, Steep Slopes",
+    "shop_menu": "Backpack, Climbing Gear, Health Potion",
+    "gui": "Heat bar indicator, Custom Health Grid",
+    "reviews": {
+      "visual_estetika": {
+        "lighting_tema": { "detail": "Pengaturan cahaya jingga sore, kabut asap tebal, suasana mendaki ekstrem.", "score": 9 },
+        "kualitas_model": { "detail": "Aset custom detail tinggi untuk bebatuan dan material lava.", "score": 8 },
+        "terrain_smoothness": { "detail": "Jalur landai halus, tidak ada lag patah-patah.", "score": 9 }
+      },
+      "ui": {
+        "layout_desain": { "detail": "UI minimalis, tidak mengganggu monitor lava di layar.", "score": 8 },
+        "fungsionalitas": { "detail": "Akses tas, toko item pelindung panas, indikator stamina jernih.", "score": 9 },
+        "interaktivitas": { "detail": "Informasi button menu responsif.", "score": 8 }
+      },
+      "player_experience": {
+        "gameplay_flow": { "detail": "Pacing parkour lava sangat menantang dan memacu adrenalin.", "score": 9 },
+        "sistem_survival": { "detail": "Keseimbangan stamina di suhu panas luar biasa.", "score": 8 },
+        "bug_glitch": { "detail": "Sangat aman dari invisible wall dan bug stuck.", "score": 9 }
+      },
+      "level_design": {
+        "pacing_jalur": { "detail": "Tempat pos checkpoint sangat pas di jeda rintangan.", "score": 9 },
+        "landmark": { "detail": "Kawah lava di puncak memberikan view foto terbaik.", "score": 10 },
+        "soundscape": { "detail": "Suara gemuruh magma dan BGM ketegangan mendukung.", "score": 9 }
+      },
+      "fitur_tambahan": {
+        "social_features": { "detail": "Lengkap dengan fiture mabar & teleport teman.", "score": 8 },
+        "replayability": { "detail": "Sangat cocok untuk tim speedrun.", "score": 9 },
+        "rekomendasi": { "detail": "Sangat layak di PC, performa stabil di Mobile.", "score": 8 }
+      }
+    }
+  },
+  {
+    "id": "2",
+    "title": "Mount MiuMiu",
+    "author": "Ascendera Community",
+    "type": "Snow Mountain",
+    "img": "/miumiu.png",
+    "rating": "4.8",
+    "plays": 800,
+    "link": "https://www.roblox.com/share?code=5cfa8f0c2def0c40b5a2038c671fbf5c&type=ExperienceDetails&stamp=1773646287581",
+    "description": "Mount MiuMiu is a calm yet tricky snow summit. Heavy blizzards wait at the high levels where body temperatures drop rapidly.",
+    "model_type": "Realistic Ice Textures",
+    "checkpoints": 25,
+    "characteristics": "Cold blizzard, Slippery paths",
+    "shop_menu": "Winter coat, Warm soup, Snow picks",
+    "gui": "Temperature bar, Ice screen freezing effect",
+    "reviews": {
+      "visual_estetika": {
+        "lighting_tema": { "detail": "Suasana pagi berkabut salju, lighting biru dingin estetik.", "score": 9 },
+        "kualitas_model": { "detail": "Pepohonan pinus custom salju sangat realistis.", "score": 9 },
+        "terrain_smoothness": { "detail": "Beberapa jalur licin namun mulus dilalui.", "score": 8 }
+      },
+      "ui": {
+        "layout_desain": { "detail": "Efek layar beku di pinggir sangat estetik.", "score": 10 },
+        "fungsionalitas": { "detail": "Menu tas & item hangat tertata rapi.", "score": 8 },
+        "interaktivitas": { "detail": "Respons tombol baik dan informatif.", "score": 8 }
+      },
+      "player_experience": {
+        "gameplay_flow": { "detail": "Jalur pendakian seru dengan tantangan angin kencang.", "score": 8 },
+        "sistem_survival": { "detail": "Manajemen dingin/suhu tubuh sangat imersif.", "score": 9 },
+        "bug_glitch": { "detail": "Bebas bug mengganggu.", "score": 9 }
+      },
+      "level_design": {
+        "pacing_jalur": { "detail": "Checkpoint diletakkan di dalam gua hangat, sangat pas.", "score": 9 },
+        "landmark": { "detail": "Pemandangan puncak abadi bersalju spektakuler.", "score": 9 },
+        "soundscape": { "detail": "Deburan angin kencang menderu-deru sangat real.", "score": 10 }
+      },
+      "fitur_tambahan": {
+        "social_features": { "detail": "Ada leaderboard pendaki tercepat di basecamp.", "score": 9 },
+        "replayability": { "detail": "Selalu ingin kembali untuk eksplore gua rahasia.", "score": 8 },
+        "rekomendasi": { "detail": "Sempurna di PC & Mobile.", "score": 9 }
+      }
+    }
+  }
 ]
