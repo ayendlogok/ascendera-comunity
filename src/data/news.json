@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "🏆 Turnamen Mountain Build Challenge Indonesia 2026 Dibuka!",
+    "category": "Event",
+    "tags": ["Event", "Indonesia"],
+    "content": "Komunitas Ascendera Indonesia resmi membuka pendaftaran kompetisi build map pegunungan terbesar tahun ini. Buat lingkungan salju paling estetik untuk memperebutkan hadiah 20,000 Robux dan Badge Eksklusif bagi kreator lokal terbaik yang berhasil submit rute pendakian realistis.",
+    "createdAt": "2026-03-16T10:00:00.000Z",
+    "img": "/news1.png"
+  },
+  {
+    "id": "2",
+    "title": "🚀 Update Server Asia: Latensi Lebih Kecil bagi Pemain Indonesia",
+    "category": "Update",
+    "tags": ["Update", "Performance"],
+    "content": "Roblox Corporation pekan ini mengumumkan penambahan node server edge di Singapura dan Jakarta. Pengguna di Indonesia kini dapat menikmati latensi (*ping*) minimal 30-40ms saat menjelajahi map-map bermuatan grafik tinggi (*high-poly*) yang dibangun kreator lokal secara optimal.",
+    "createdAt": "2026-03-14T14:30:00.000Z",
+    "img": "/news2.png"
+  },
+  {
+    "id": "3",
+    "title": "🌟 Developer Spotlight: Kreator Lokal Bandung Tembus 1 Juta Kunjungan",
+    "category": "Spotlight",
+    "tags": ["Developer", "Kisah"],
+    "content": "Wawancara eksklusif bersama kreator lokal asal Bandung yang berhasil menembus 1.000.000 kunjungan (*visits*) pada map Volcano rilisannya. Simak tips and trik setup workspace and scaling dari kreator berbakat satu ini sebelum rilis update besar-besaran.",
+    "createdAt": "2026-03-12T09:12:00.000Z",
+    "img": "/news3.png"
+  }
+]

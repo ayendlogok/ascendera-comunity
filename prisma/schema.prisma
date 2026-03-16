@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// NextAuth Models required for Authentication
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id              String    @id @default(cuid())
+  name            String?
+  email           String?   @unique
+  emailVerified   DateTime?
+  image           String?
+  username        String?   @unique
+  roblox_username String?   @unique
+  bio             String?   @db.Text
+  role            String    @default("developer") // "developer", "admin"
+  createdAt       DateTime  @default(now())
+
+  accounts        Account[]
+  sessions        Session[]
+  maps            Map[]
+  assets          Asset[]
+  favorites       Favorite[]
+  ratings         Rating[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Custom Application Models
+model Map {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  thumbnail   String?
+  roblox_link String?
+  category    String   // Volcano, Hiking, Forest, Snow Mountain
+  author_id   String
+  rating      Float    @default(0)
+  createdAt   DateTime @default(now())
+
+  author      User       @relation(fields: [author_id], references: [id], onDelete: Cascade)
+  favorites   Favorite[]
+  ratings     Rating[]
+}
+
+model Asset {
+  id            String   @id @default(cuid())
+  title         String
+  category      String   // Mountain terrain, Rocks, Trees, Fog effects, Sound ambience
+  file_url      String
+  preview_image String?
+  author_id     String
+
+  author        User     @relation(fields: [author_id], references: [id], onDelete: Cascade)
+}
+
+model Favorite {
+  user_id String
+  map_id  String
+
+  user    User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  map     Map  @relation(fields: [map_id], references: [id], onDelete: Cascade)
+
+  @@id([user_id, map_id])
+}
+
+model Rating {
+  user_id String
+  map_id  String
+  rating  Int
+
+  user    User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  map     Map  @relation(fields: [map_id], references: [id], onDelete: Cascade)
+
+  @@id([user_id, map_id])
+}
+
+model CollaborationPost {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  role_needed String
+  contact     String
+  createdAt   DateTime @default(now())
+}
