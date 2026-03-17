@@ -5,7 +5,7 @@ import { Mountain, DiscIcon as Discord, Users, CheckCircle } from 'lucide-react'
 
 export default function JoinPage() {
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white py-16 flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-transparent text-white py-16 flex items-center justify-center relative overflow-hidden">
       
       <div className="absolute inset-0 z-0 opacity-10 blur-sm pointer-events-none">
         <Mountain className="w-[800px] h-[800px] absolute -right-40 -bottom-40 text-[#22c55e]" />

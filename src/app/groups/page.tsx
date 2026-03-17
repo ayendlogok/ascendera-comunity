@@ -15,7 +15,7 @@ export default function GroupsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white py-20 flex items-center justify-center">
+    <div className="min-h-screen bg-transparent text-white py-20 flex items-center justify-center">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         <div className="text-center mb-12">

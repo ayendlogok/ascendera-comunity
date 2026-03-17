@@ -79,12 +79,12 @@ export default function TutorialsPage() {
   }
 
   if (status === 'loading') {
-    return <div className="min-h-screen bg-[#0f172a] text-white py-12 flex justify-center items-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div></div>
+    return <div className="min-h-screen bg-transparent text-white py-12 flex justify-center items-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div></div>
   }
 
   if (status === 'unauthenticated') {
     return (
-      <div className="min-h-screen bg-[#0f172a] text-white py-12 flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-transparent text-white py-12 flex flex-col items-center justify-center">
         <LockKeyhole className="w-16 h-16 text-[#f97316] mb-6" />
         <h1 className="text-3xl font-bold mb-4">Developer Access Required</h1>
         <p className="text-gray-400 mb-8 max-w-md text-center">
@@ -98,7 +98,7 @@ export default function TutorialsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white py-12">
+    <div className="min-h-screen bg-transparent text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-10">

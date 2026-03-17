@@ -18,7 +18,7 @@ export default function NewsPage() {
   const defaultImg = "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&q=80"
   
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white py-12">
+    <div className="min-h-screen bg-transparent text-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex items-center gap-4 mb-12 border-b border-gray-800 pb-8">

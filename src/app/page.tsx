@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Mountain, Users, Download, Star, ArrowRight } from 'lucide-react'
+import { Mountain, Users, Download, Star, ArrowRight, Moon, Sparkles } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 
 import { useState, useEffect } from 'react'
@@ -57,13 +57,25 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0f172a] z-10" />
           <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80"
-            alt="Mountain background"
-            className="w-full h-full object-cover opacity-40"
+            src="/ramadan_hero.png"
+            alt="Ramadan Background - Gunung Plenger & Miumiu"
+            className="w-full h-full object-cover opacity-65"
           />
         </div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
+          {/* Ramadan Special Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/90 via-green-600/90 to-emerald-600/90 text-white px-5 py-2 rounded-full font-bold shadow-xl shadow-green-900/30 border border-yellow-400/40 mb-6"
+          >
+            <Moon className="w-5 h-5 fill-yellow-400 text-yellow-400 animate-pulse" />
+            <span className="text-yellow-300 tracking-wide font-extrabold text-sm md:text-base drop-shadow-sm">RAMADAN 1447 H MUBARAK</span>
+            <Sparkles className="w-5 h-5 text-yellow-400" />
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

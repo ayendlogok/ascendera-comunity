@@ -14,14 +14,14 @@ export default function DevelopmentDashboard() {
   const [loading, setLoading] = useState(false)
 
   if (status === 'loading') {
-    return <div className="min-h-screen bg-[#0f172a] text-white py-12 flex justify-center items-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div></div>
+    return <div className="min-h-screen bg-transparent text-white py-12 flex justify-center items-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div></div>
   }
 
   const userRole = (session?.user as any)?.role
 
   if (status === 'unauthenticated' || userRole !== 'ADMIN') {
     return (
-      <div className="min-h-screen bg-[#0f172a] text-white py-12 flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-transparent text-white py-12 flex flex-col items-center justify-center">
         <LockKeyhole className="w-16 h-16 text-[#f97316] mb-6" />
         <h1 className="text-3xl font-bold mb-4">Admin Access Required</h1>
         <p className="text-gray-400 mb-8 max-w-md text-center">
@@ -57,7 +57,7 @@ export default function DevelopmentDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white py-12">
+    <div className="min-h-screen bg-transparent text-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center py-12">
