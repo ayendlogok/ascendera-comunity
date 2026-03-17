@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Newspaper, BellRing, Calendar } from 'lucide-react'
+import { Newspaper, BellRing, Calendar, X } from 'lucide-react'
 
 export default function NewsPage() {
   const [news, setNews] = useState<any[]>([])
@@ -115,7 +115,7 @@ export default function NewsPage() {
                 className="absolute top-4 right-4 bg-black/60 p-2 rounded-full hover:bg-black/90 text-gray-400 hover:text-white transition-colors"
                 aria-label="Close News Modal"
               >
-                <BellRing className="w-5 h-5 rotate-45 transform" />
+                <X className="w-5 h-5" />
               </button>
               
               <img src={selectedNews.img || defaultImg} alt={selectedNews.title} className="w-full h-56 object-cover border-b border-gray-800" />

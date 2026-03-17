@@ -155,7 +155,7 @@ export default function MapsPage() {
             >
               <button 
                 onClick={() => setSelectedMap(null)} 
-                className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-white/10 text-white rounded-full transition-colors backdrop-blur border border-gray-700"
+                className="fixed top-6 right-6 md:absolute md:top-4 md:right-4 z-[100] p-2 bg-black/80 hover:bg-white/10 text-white rounded-full transition-colors backdrop-blur border border-gray-700"
               >
                 <X className="w-5 h-5" />
               </button>
