@@ -9,6 +9,7 @@ import Link from 'next/link'
 // Simulated fallback members when Widget is disabled
 const FALLBACK_MEMBERS = [
   { username: "yantooooo", role: "Owner", color: "#f97316", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Felix" },
+  { username: "Remindaniel", role: "Co-Owner", color: "#e11d48", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Easton" },
   { username: "MasBi", role: "Admin", color: "#3b82f6", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Liam" },
   { username: "ZikS", role: "Admin", color: "#3b82f6", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Milo" },
   { username: "joeyzn", role: "Web Dev", color: "#d946ef", avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Oliver" },
