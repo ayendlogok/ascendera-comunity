@@ -32,16 +32,19 @@ export function Navbar() {
                   <Link href="/maps" className={`${isActive('/maps')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Maps Review</Link>
                   <Link href="/play" className={`${isActive('/play')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Play Maps</Link>
                   <Link href="/news" className={`${isActive('/news')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>News</Link>
+                  <Link href="/events" className={`${isActive('/events')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Events</Link>
                 </>
               )}
                <Link href="/developers" className={`${isActive('/developers')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Members</Link>
                <Link href="/groups" className={`${isActive('/groups')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Our Groups</Link>
               
-              {/* Protected Links (Devs/Admins) */}
               {status === 'authenticated' && (
                 <>
                   <Link href="/assets" className={`${isActive('/assets')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Dev Assets</Link>
                   <Link href="/tutorials" className={`${isActive('/tutorials')} px-3 py-2 rounded-md text-sm font-medium transition-colors`}>Tutorials</Link>
+                  {(session?.user as any)?.role === 'ADMIN' && (
+                    <Link href="/development" className={`${isActive('/development')} px-3 py-2 rounded-md text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors`}>Admin Panel</Link>
+                  )}
                 </>
               )}
             </div>
@@ -90,6 +93,7 @@ export function Navbar() {
               <Link href="/maps" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Maps Review</Link>
               <Link href="/play" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Play Maps</Link>
               <Link href="/news" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">News</Link>
+              <Link href="/events" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Events</Link>
             </>
           )}
           <Link href="/developers" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Members</Link>
@@ -99,6 +103,9 @@ export function Navbar() {
             <>
               <Link href="/assets" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Dev Assets</Link>
               <Link href="/tutorials" onClick={() => setIsOpen(false)} className="block text-gray-300 hover:text-[#22c55e] py-2 text-sm font-medium">Tutorials</Link>
+              {(session?.user as any)?.role === 'ADMIN' && (
+                <Link href="/development" onClick={() => setIsOpen(false)} className="block text-emerald-400 hover:text-emerald-300 py-2 text-sm font-medium">Admin Panel</Link>
+              )}
               <div className="border-t border-gray-800 pt-4 mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-gray-300">
                   <User className="w-4 h-4" />

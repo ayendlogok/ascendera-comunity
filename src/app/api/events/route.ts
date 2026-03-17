@@ -2,10 +2,13 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
-const filePath = path.join(process.cwd(), 'src/data/news.json')
+const filePath = path.join(process.cwd(), 'src/data/events.json')
 
 export async function GET() {
   try {
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, '[]')
+    }
     const data = fs.readFileSync(filePath, 'utf-8')
     return NextResponse.json(JSON.parse(data))
   } catch (err) {
@@ -16,22 +19,25 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const { title, tags, content, image } = body
+    const { title, content, image } = body
+
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, '[]')
+    }
 
     const data = fs.readFileSync(filePath, 'utf-8')
-    const news = JSON.parse(data)
+    const events = JSON.parse(data)
 
     const newItem = {
       id: String(Date.now()),
       title,
-      tags: tags ? tags.split(',').map((t: string) => t.trim()) : [],
       content,
-      img: image || '', 
+      image: image || '/ramadan_hero.png', // Fallback to our beautiful ramadan_hero
       createdAt: new Date().toISOString()
     }
 
-    news.unshift(newItem) // Add to top
-    fs.writeFileSync(filePath, JSON.stringify(news, null, 2))
+    events.unshift(newItem) // Add to top
+    fs.writeFileSync(filePath, JSON.stringify(events, null, 2))
 
     return NextResponse.json({ success: true, newItem })
   } catch (err) {
