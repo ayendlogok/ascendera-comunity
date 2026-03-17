@@ -35,7 +35,8 @@ export default function NewsPage() {
 
         <div className="space-y-12">
           {news.map((item, i) => {
-            const itemType = item.tags && item.tags[0] ? item.tags[0] : "Update"
+            const tagsArray = typeof item.tags === 'string' ? item.tags.split(',').map((t: string) => t.trim()) : item.tags || []
+            const itemType = tagsArray[0] || "Update"
             const itemDate = new Date(item.createdAt).toLocaleDateString('id-ID', { month: 'long', day: 'numeric', year: 'numeric' })
             const itemImg = item.img || defaultImg
 
@@ -100,7 +101,10 @@ export default function NewsPage() {
               
               <div className="p-6 md:p-8">
                 <span className="px-3 py-1 bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/30 rounded-full text-xs font-bold w-fit block mb-4">
-                  {selectedNews.tags && selectedNews.tags[0] ? selectedNews.tags[0] : "Update"}
+                  {(() => {
+                    const tagsArray = typeof selectedNews.tags === 'string' ? selectedNews.tags.split(',').map((t: string) => t.trim()) : selectedNews.tags || []
+                    return tagsArray[0] || "Update"
+                  })()}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-extrabold mb-4">{selectedNews.title}</h2>
                 <p className="text-gray-400 text-sm mb-6 flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {new Date(selectedNews.createdAt).toLocaleDateString('id-ID', { month: 'long', day: 'numeric', year: 'numeric' })}</p>

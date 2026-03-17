@@ -1,13 +1,12 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
-
-const filePath = path.join(process.cwd(), 'src/data/news.json')
+import prisma from '@/lib/prisma'
 
 export async function GET() {
   try {
-    const data = fs.readFileSync(filePath, 'utf-8')
-    return NextResponse.json(JSON.parse(data))
+    const news = await prisma.news.findMany({
+      orderBy: { createdAt: 'desc' }
+    })
+    return NextResponse.json(news)
   } catch (err) {
     return NextResponse.json([], { status: 500 })
   }
@@ -18,23 +17,17 @@ export async function POST(req: Request) {
     const body = await req.json()
     const { title, tags, content, image } = body
 
-    const data = fs.readFileSync(filePath, 'utf-8')
-    const news = JSON.parse(data)
-
-    const newItem = {
-      id: String(Date.now()),
-      title,
-      tags: tags ? tags.split(',').map((t: string) => t.trim()) : [],
-      content,
-      img: image || '', 
-      createdAt: new Date().toISOString()
-    }
-
-    news.unshift(newItem) // Add to top
-    fs.writeFileSync(filePath, JSON.stringify(news, null, 2))
+    const newItem = await prisma.news.create({
+      data: {
+        title,
+        tags: tags || '', 
+        content,
+        img: image || ''
+      }
+    })
 
     return NextResponse.json({ success: true, newItem })
   } catch (err) {
-    return NextResponse.json({ success: false, error: 'Failed to write data' }, { status: 500 })
+    return NextResponse.json({ success: false, error: 'Failed to write to database' }, { status: 500 })
   }
 }

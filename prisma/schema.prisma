@@ -120,3 +120,20 @@ model CollaborationPost {
   contact     String
   createdAt   DateTime @default(now())
 }
+
+model News {
+  id        String   @id @default(cuid())
+  title     String
+  tags      String?  @db.Text
+  content   String   @db.Text
+  img       String?  @db.Text
+  createdAt DateTime @default(now())
+}
+
+model Event {
+  id        String   @id @default(cuid())
+  title     String
+  content   String   @db.Text
+  image     String?  @db.Text
+  createdAt DateTime @default(now())
+}
