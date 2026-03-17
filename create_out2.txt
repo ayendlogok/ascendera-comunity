@@ -1,0 +1,8 @@
+﻿Connecting to database and creating event...
+Γ£à Event created successfully: {
+  id: 'cmmuf58d90000fqrfn8k4q02p',
+  title: 'Test Event Local',
+  content: 'This is a test from local test script',
+  image: '/ramadan_hero.png',
+  createdAt: 2026-03-17T09:37:25.149Z
+}
