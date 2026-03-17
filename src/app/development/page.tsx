@@ -34,23 +34,22 @@ export default function DevelopmentDashboard() {
     )
   }
 
+  const convertToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = error => reject(error)
+    })
+  }
+
   const submitForm = async (url: string, data: any) => {
     setLoading(true)
     try {
       let imageUrl = '';
       
       if (imageFile) {
-        const fData = new FormData()
-        fData.append('file', imageFile)
-        const uploadRes = await fetch('/api/upload', { method: 'POST', body: fData })
-        const uploadData = await uploadRes.json()
-        if (uploadData.success) {
-          imageUrl = uploadData.url
-        } else {
-          alert('Gagal mengupload gambar.')
-          setLoading(false)
-          return
-        }
+        imageUrl = await convertToBase64(imageFile)
       }
 
       const finalData = { ...data, image: imageUrl }
