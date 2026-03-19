@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Providers from "@/components/Providers";
-import { RamadanTheme } from "@/components/RamadanTheme";
+import { LebaranTheme } from "@/components/LebaranTheme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,19 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col bg-[#0f172a] text-white pt-12 relative`}>
-        {/* Global Ramadan Background Ambient Layer */}
+        {/* Global Festive Ambient Layer */}
         <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
-          <img 
-            src="/ramadan_hero.png" 
-            alt="Ramadan Background Ambient" 
-            className="w-full h-full object-cover opacity-25" 
-          />
-          {/* Subtle blend to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/50 via-[#0f172a]/80 to-[#0f172a]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/40 via-[#0f172a]/80 to-[#0f172a]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent" />
         </div>
 
         <Providers>
-          <RamadanTheme />
+          <LebaranTheme />
           <Navbar />
           <main className="flex-grow">
             {children}

@@ -56,7 +56,7 @@ export default function EventsPage() {
                 {/* Event Banner */}
                 <div className="h-64 md:h-80 w-full relative overflow-hidden bg-gray-900">
                   <img 
-                    src={event.image || '/ramadan_hero.png'} 
+                    src={event.image || '/roblox_eid_banner.png'} 
                     alt={event.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                   />

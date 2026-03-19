@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Moon, Star, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-export function RamadanTheme() {
+export function LebaranTheme() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export function RamadanTheme() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-center gap-3 text-center">
           <Moon className="w-5 h-5 text-yellow-400 fill-yellow-400 animate-pulse" />
           <span className="font-semibold text-sm md:text-base tracking-wide flex items-center gap-2">
-            <span className="text-yellow-400 font-extrabold uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">Marhaban Ya Ramadan 1447 H</span> 
+            <span className="text-yellow-400 font-extrabold uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">Selamat Hari Raya Idul Fitri 1447 H</span> 
             <span className="hidden sm:inline text-gray-200">|</span>
-            <span className="hidden sm:inline text-gray-100">Selamat Menunaikan Ibadah Puasa</span>
+            <span className="hidden sm:inline text-gray-100 font-medium">Minal Aidin Wal Faizin - Mohon Maaf Lahir dan Batin</span>
           </span>
           <Sparkles className="w-5 h-5 text-yellow-400 animate-bounce" />
         </div>

@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Mountain, Users, Download, Star, ArrowRight, Moon, Sparkles } from 'lucide-react'
 import { useSession } from 'next-auth/react'
+import { RobloxEidBanner } from '@/components/RobloxEidBanner'
+
 
 import { useState, useEffect } from 'react'
 
@@ -55,16 +57,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0f172a] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/40 via-[#0f172a]/80 to-[#0f172a] z-10" />
           <img
-            src="/ramadan_hero.png"
-            alt="Ramadan Background - Gunung Plenger & Miumiu"
-            className="w-full h-full object-cover opacity-65"
+            src="/roblox_eid_banner.png"
+            alt="Lebaran Background - Ascendera Community"
+            className="w-full h-full object-cover opacity-30 blur-sm"
           />
         </div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
-          {/* Ramadan Special Badge */}
+          {/* Idul Fitri Special Badge */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,7 +74,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/90 via-green-600/90 to-emerald-600/90 text-white px-5 py-2 rounded-full font-bold shadow-xl shadow-green-900/30 border border-yellow-400/40 mb-6"
           >
             <Moon className="w-5 h-5 fill-yellow-400 text-yellow-400 animate-pulse" />
-            <span className="text-yellow-300 tracking-wide font-extrabold text-sm md:text-base drop-shadow-sm">RAMADAN 1447 H MUBARAK</span>
+            <span className="text-yellow-300 tracking-wide font-extrabold text-sm md:text-base drop-shadow-sm">IDUL FITRI 1447 H</span>
             <Sparkles className="w-5 h-5 text-yellow-400" />
           </motion.div>
 
@@ -131,6 +133,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Roblox Eid Banner */}
+      <RobloxEidBanner />
 
       {/* Stats Section */}
       <section className="py-12 border-y border-gray-800 bg-[#0f172a]/50">
